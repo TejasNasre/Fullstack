@@ -9,9 +9,13 @@ function App() {
 
   useEffect(() => {
       axios.get('https://backend-sample-lw2c.onrender.com/api/jokes')
-    .then((res) => {
-      setJokes(res.data)
-    })
+      .then((res) => {
+        if (Array.isArray(res.data)) {
+          setJokes(res.data)
+        } else {
+          console.error('Data received is not an array')
+        }
+      })
     .catch((err) => {
       console.log(err)
     })

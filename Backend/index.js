@@ -20,7 +20,9 @@ app.get('/api/jokes',(req,res) => {
         {id:4, joke : 'joke 4'},
         {id:5, joke : 'joke 5'},
     ]
-    res.send(jokes)
+    res.status(200).json({
+      jokes : jokes,
+    })
 })
 
 // Set up the server to listen on a specific port

@@ -8,7 +8,7 @@ function App() {
   const [jokes,setJokes] = useState([])
 
   useEffect(() => {
-    axios.get('/api/jokes')
+      axios.get('https://backend-sample-lw2c.onrender.com/api/jokes')
     .then((res) => {
       setJokes(res.data)
     })
